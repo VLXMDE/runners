@@ -2,12 +2,20 @@ name: Hello World
 
 on:
   push:
-    branches:
-    - main # Change this to your main branch name
+    # branches:
+    # - main # Change this to your main branch name
+    branches: none # [ main ]
+  pull_request:
+    branches: none # [ main ]
+
 
 jobs:
   hello_world_job:
     runs-on: self-hosted # Indicates that the job should run on a self-hosted runner
     steps:
-    - name: Hello World
-      run: echo "Hello, World!"
+    - uses: actions/checkout@v3
+      name: Hello there
+      run: |
+        echo Hello, world!
+        echo This job is running on a self-hosted runner.
+
