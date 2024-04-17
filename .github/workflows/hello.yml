@@ -1,0 +1,13 @@
+name: Hello World
+
+on:
+  push:
+    branches:
+    - main # Change this to your main branch name
+
+jobs:
+  hello_world_job:
+    runs-on: self-hosted # Indicates that the job should run on a self-hosted runner
+    steps:
+    - name: Hello World
+      run: echo "Hello, World!"
